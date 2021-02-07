@@ -3,8 +3,6 @@ services: # Contains list of all services/containers to deploy
   frontend: 
     depends_on:
       - backend
-    networks:
-      - store-net
     container_name: "frontend" # Name of the container when deployed
     build: ./frontend # Specify Dockerfile to be built
     image: "frontend" # Name of the image when built
@@ -15,8 +13,6 @@ services: # Contains list of all services/containers to deploy
 
   backend:
     container_name: "backend"
-    networks:
-      - store-net
     image: "node" # Image to be used
     working_dir: /home/node/app # Working directory inside the container
     user: "node" # username when logged in
@@ -26,6 +22,4 @@ services: # Contains list of all services/containers to deploy
       - "3000:3000"
     command: "npm start"
 
-networks:
-  store-net:
     
