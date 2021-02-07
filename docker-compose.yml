@@ -17,7 +17,7 @@ services: # Contains list of all services/containers to deploy
     working_dir: /home/node/app # Working directory inside the container
     user: "node" # username when logged in
     volumes: # Mounts
-      - ./backend/data:/home/node/app
+      - ./backend:/home/node/app
     ports:
       - "3000:3000"
     command: "npm start"
